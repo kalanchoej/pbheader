@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
 <style>
 /*This will get moved to an external file when the snippet is used */
 #SearchForm {
@@ -8,11 +12,112 @@
   left:670px;
   top:-140px;
 }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
+  color:white;
+  }
+  
+ul a {
+  color:#EFE6C9;
+  text-decoration:none
+  }
+  
+ul a:hover {
+  color:#ffffff;
+  }  
+
+li {
+  float: left;
+  position: relative;
+  padding: 4px 12px;
+  background: url('images/brown_background.png') repeat-x;
+  border-right:2px ridge #382c1a;
+  height:22px;
+  font-size:18px;
+}
+
+li:hover, li.over {
+    background: url('images/green_background.png') repeat-x;
+}
+
+li:hover li, li.over li{
+    background-image:none;
+}
+
+  
+li ul {
+  display: none;
+  position: absolute; 
+  top: 30px;
+  left: 0;
+  background:#507029;
+  width:17em;
+  }
+  
+li li {
+    background-image:none;
+    border:none;
+    font-size:14px;
+    clear:left;
+}
+
+  
+li:hover ul, li.over ul {
+    display: block;
+}
+
+.arrow {
+    font-size:10px;
+    float:right;
+    margin: 5px 0 0 9px;
+}
+
+.clear {clear:both;}
+
+#lastDropdown {
+  border:none;
+}
+
+#navDiv {
+  width:950px;
+  height:30px;
+  background: url('images/brown_background.png') repeat-x;
+}
+
 </style>
+
+<script>
+
+startList = function() {
+if (document.all&&document.getElementById) {
+navRoot = document.getElementById("nav");
+for (i=0; i<navRoot.childNodes.length; i++) {
+node = navRoot.childNodes[i];
+if (node.nodeName=="LI") {
+node.onmouseover=function() {
+this.className+=" over";
+  }
+  node.onmouseout=function() {
+  this.className=this.className.replace(" over", "");
+   }
+   }
+  }
+ }
+}
+window.onload=startList;
+
+</script>
+
+</head>
+
 <table>
   <tr>
     <td valign="top">
-      <img src="/opac/images/2010pbpl_new1.jpg" usemap="#Map" id="pbHeaderImg" />
+      <img src="opac/images/2010pbpl_new1.jpg" usemap="#Map" id="pbHeaderImg" />
       <map name="Map" id="Map">
             <area shape="rect" coords="659,41,778,65" href="/ref_ask.html" />
             <area shape="rect" coords="753,118,946,156" href="mailto:library@poplarbluff.org" />
@@ -25,17 +130,99 @@
 </table>
 <table id="navTable">
   <tr>
-    <td></td>
-  </tr>
-  <tr>
     <td>
-      <table>
-        <tr>
-          <td>
-            <!--Jessica's Menu Goes Here-->
-          </td>
-        </tr>
-      </table>
+      <div id="navDiv">
+      <ul id="nav">
+        <li>Read<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="http://poplarbluff.org/library/emedia.html">Read eBooks</a></li>
+            <li><a href="http://poplarbluff.org/library/emedia.html#emags">Read eMagazines</a></li>
+            <li><a href="http://poplarbluff.org/library/emedia.html#enews">Read eNewspapers</a></li>
+            <li><a href="http://poplarbluff.org/library/ots.pdf">Library Event Newsletter</a></li>
+            <li><a href="http://poplarbluff.org/library/LibraryServicesBrochure.pdf">Library Services Brochure</a></li>
+                      </ul>
+              </li>
+      
+        <li>Download<div class="arrow">&#9660;</div> 
+          <ul>
+            <li><a href="http://www.molib2go.org/30285DD1-F488-4C01-978B-F6D4D6819614/10/681/en/BANGSearch.dll?Type=Format&amp;ID=50,410&amp;SortBy=CollDate">eBooks</a></li>
+            <li><a href="http://www.molib2go.org/30285DD1-F488-4C01-978B-F6D4D6819614/10/681/en/BANGSearch.dll?Type=Format&amp;ID=425,25&amp;SortBy=CollDate">eAudiobooks</a></li>
+            <li><a href="http://www.molib2go.org">Browse all downloads</a></li>
+            <li><a href="http://www.molib2go.org/C2DAD16F-5263-4106-AF9C-E27215AFA325/10/681/en/Help-QuickStartGuide.htm">Quick Start Guide for Downloadables</a></li>
+            <li><a href="http://www.molib2go.org/30285DD1-F488-4C01-978B-F6D4D6819614/10/681/en/selectHelpFormat.htm?returnURL=http://www.molib2go.org/30285DD1-F488-4C01-978B-F6D4D6819614/10/681/en/Default.htm"">"My Download Help" Wizard</a></li>
+            <li><a href="http://www.overdrive.com/resources/drc/Default.aspx">Supported Devices List</a></li>
+          </ul>
+        </li>
+      
+        <li>Manage<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="">Renew your books</a></li>
+            <li><a href="">Place a hold on a book or movie</a></li>
+            <li><a href="">Update your library card information</a></li>
+            <li><a href="">Pay your library fees and fines</a></li>
+          </ul>
+        </li>
+      
+        <li>Join<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="http://www.supportlibrary.com/su/su.cfm?x=215296">Online Book Clubs</a></li>
+            <li><a href="http://poplarbluff.org/library/blog.html">Library Book Club Blog</a></li>
+          </ul>
+        </li>
+      
+        <li>Reserve<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="http://poplarbluff.org/library/meeting_rooms.html#conferece">Library Conference Room</a></li>
+            <li><a href="http://poplarbluff.org/library/meeting_rooms.html#theater">Library Theater</a></li>
+          </ul>
+        </li>
+        
+        <li>Sign Up<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="http://poplarbluff.org/library/emailnotices.html">For Email Notices from the Library</a></li>
+            <li><a href="http://poplarbluff.org/library/subscribe.html">For the library event newsletter by email</a></li>
+            <li><a href="http://poplarbluff.org/library/bestsellers.html">For the Best Sellers Club</a></li>
+            <li><a href="http://poplarbluff.org/library/computerclasses.html">To take a Library Computer Class</a></li>
+          </ul>
+        </li>
+  
+        <li>Browse<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="http://poplarbluff.org/library/tornado1p.html">1927 Poplar Bluff Tornado Pictures</a></li>
+            <li><a href="">Online Obituary Index (Jan. 2008-Present)</a></li>
+            <li><a href="">New Non-Fiction Books</a></li>
+            <li><a href="">New Children's Books</a></li>
+            <li><a href="">New Movies</a></li>
+            <li><a href="">All New Arrivals at the Library</a></li>
+            <li><a href="http://poplarbluff.org/library/collections.html">Library Collections</a></li>
+          </ul>
+        </li>
+        
+        <li>Events<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="http://poplarbluff.org/library/calendar.html">Calendar of Events</a></li>
+            <li><a href="http://poplarbluff.org/library/computerclasses.html">Computer Classes</a></li>
+            <li><a href="http://poplarbluff.org/library/blog.html">Book Club</a></li>
+            <li><a href="http://poplarbluff.org/library/justforkids.html">Children's Events</a></li>
+            <li><a href="http://poplarbluff.org/library/teens">Events for Teens</a></li>
+            <li><a href="http://poplarbluff.org/library/ots.pdf">Off the Shelf Event Newsletter</a></li>
+          </ul>
+        </li>
+        
+        <li id="lastDropdown">Find Info<div class="arrow">&#9660;</div>
+          <ul>
+            <li><a href="http://poplarbluff.org/library/catalog.html">Find a book in the library catalog</a></li>
+            <li><a href="http://poplarbluff.org/library/librarycard.html">How do I get a library card?</a></li>
+            <li><a href="http://www.poplarbluff.org/library/ask.html">Ask a question?</a></li>
+            <li><a href="http://poplarbluff.org/library/homework2010.html">Homework at the Library</a></li>
+            <li><a href="http://poplarbluff.org/library/genealogy.html">Genealogy at the Library</a></li>
+            <li><a href="http://poplarbluff.org/library/databases.html">Library Databases</a></li>
+            <li><a href="http://poplarbluff.org/library/about.html">About the Library</a></li>
+          </ul>
+        </li>  
+      </ul>
+      </div>
     </td>
   </tr>
 </table>
+
