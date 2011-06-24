@@ -82,7 +82,7 @@ li:hover ul, li.over ul {
   border:none;
 }
 
-#navDiv {
+#nav {
   width:950px;
   height:30px;
   background: url('images/brown_background.png') repeat-x;
@@ -110,6 +110,16 @@ this.className+=" over";
 }
 window.onload=startList;
 
+function greenBackground() {
+  backgroundDiv = document.getElementById("nav")
+  backgroundDiv.style.background = "url('images/green_background.png') repeat-x"
+}
+
+function brownBackground() {
+  backgroundDiv = document.getElementById("nav")
+  backgroundDiv.style.background = "url('images/brown_background.png') repeat-x"
+}
+
 </script>
 
 </head>
@@ -131,8 +141,8 @@ window.onload=startList;
 <table id="navTable">
   <tr>
     <td>
-      <div id="navDiv">
-      <ul id="nav">
+      <div id="nav">
+      <ul>
         <li>Read<div class="arrow">&#9660;</div>
           <ul>
             <li><a href="http://poplarbluff.org/library/emedia.html">Read eBooks</a></li>
@@ -209,7 +219,7 @@ window.onload=startList;
           </ul>
         </li>
         
-        <li id="lastDropdown">Find Info<div class="arrow">&#9660;</div>
+        <li id="lastDropdown" onmouseover="greenBackground()" onmouseout="brownBackground()">Find Info<div class="arrow">&#9660;</div>
           <ul>
             <li><a href="http://poplarbluff.org/library/catalog.html">Find a book in the library catalog</a></li>
             <li><a href="http://poplarbluff.org/library/librarycard.html">How do I get a library card?</a></li>
