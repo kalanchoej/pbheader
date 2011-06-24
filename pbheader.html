@@ -1,21 +1,32 @@
+<style>
+/*This will get moved to an external file when the snippet is used */
+#SearchForm {
+  position:relative;
+  width:300px;
+  height:25px;
+  z-index:2;
+  left:670px;
+  top:-140px;
+}
+</style>
 <table>
   <tr>
-    <td valign="top" bgcolor="#D6D7AD">
-      <img src="images/2010pbpl_new1.jpg" name="Image1" width="950" height="150" border="0" usemap="#Map" id="Image1">
+    <td valign="top">
+      <img src="/opac/images/2010pbpl_new1.jpg" usemap="#Map" id="pbHeaderImg" />
       <map name="Map" id="Map">
-            <area shape="rect" coords="659,41,778,65" href="http://poplarbluff.org/library/ref_ask.html" />
+            <area shape="rect" coords="659,41,778,65" href="/ref_ask.html" />
             <area shape="rect" coords="753,118,946,156" href="mailto:library@poplarbluff.org" />
-            <area shape="rect" coords="778,38,865,64" href="http://poplarbluff.org/tlcscripts/interpac.dll?PatronForm?Directions=1&config=pac&branch=0" />
-            <area shape="rect" coords="865,40,947,63" href="http://poplarbluff.org/library/databases.html" />
-            <area shape="rect" coords="13,10,620,145" href="http://poplarbluff.org/library" />
+            <area shape="rect" coords="778,38,865,64" href="https://catalog.poplarbluff.org/opac/en-US/skin/default/xml/myopac.xml" />
+            <area shape="rect" coords="865,40,947,63" href="/databases.html" />
+            <area shape="rect" coords="13,10,620,145" href="http://poplarbluff.org" />
       </map>
-      <div id="Layer1" style="position:relative; width:300px; height:25px; z-index:2; margin-bottom: -100px; left: 670px; top: -146px; overflow: hidden; visibility: visible;">
-        <form action="/TLCScripts/interpac.dll?Search" method="post" name="SearchForm" id="SearchForm" onsubmit="return AllowSearch();">
-          <input type="hidden" name="FormId" value="0"><input type="hidden" name="Config" value="pac"><input type="hidden" name="LimitsId" value="0"><input type="hidden" name="StartIndex" value="0"><input type="hidden" name="SearchField" value="16777216"><input type="hidden" name="SearchType" value="1"><input type="hidden" name="ItemsPerPage" value="10"><input type="hidden" name="Branch" value=",1,">
+        <form action="/opac/en-US/skin/default/xml/rresult.xml" method="get" name="SearchForm" id="SearchForm">
+          <input type="hidden" name="rt" id="rt" value="keyword" />
+          <input type="hidden" name="tp" id="tp" value="keyword" />
+          <input type="hidden" name="l" id="l" value="2" />
           <div align="center">
             <input name="t" id="t" type="text" value="Search for a book" size="25" maxlength="250" onblur="if (this.value == '') {this.value = 'Search for a book';}" onfocus="if (this.value == 'Search for a book') {this.value = '';}" /><!-- TODO update this to use placeholder attribute when TT Opac comes along -->
             <input type="submit" value="Search"> 
-          </div>
         </form>
       </div>
     </td>
